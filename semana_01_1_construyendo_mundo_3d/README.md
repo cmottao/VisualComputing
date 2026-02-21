@@ -1,4 +1,4 @@
-# Construyendo Mundo 3D - Visor de Modelos
+# Construyendo el Mundo 3D: Vértices, Aristas y Caras
 
 ## Nombre del estudiante
 
