@@ -120,10 +120,19 @@ Taller realizado de forma individual.
 
 ```
 semana_01_1_construyendo_mundo_3d/
-├── python/          # Código Python 
-├── threejs/         # Código Three.js/React 
-├── media/           # OBLIGATORIO: Imágenes, videos, GIFs
-└── README.md        # Este archivo
+├── python/
+│   ├── notebook.ipynb    # Visualización de vértices, aristas y caras
+│   └── torus.glb         # Modelo de prueba
+├── threejs/
+│   ├── src/
+│   │   ├── App.jsx              # Componente principal con estado
+│   │   ├── components/
+│   │   │   ├── ModelViewer.jsx  # Visor con modos de visualización
+│   │   │   └── Controls.jsx     # Panel de control y estadísticas
+│   ├── public/models/
+│   └── package.json
+├── media/                # Imágenes y GIFs de resultados
+└── README.md            # Este archivo
 ```
 
 ---
