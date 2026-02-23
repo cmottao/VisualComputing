@@ -32,6 +32,11 @@ function HierarchyScene() {
       parentRotY: { value: 0, min: -Math.PI, max: Math.PI, step: 0.01, label: 'Y' },
       parentRotZ: { value: 0, min: -Math.PI, max: Math.PI, step: 0.01, label: 'Z' },
     }),
+    scale: folder({
+      parentScaleX: { value: 1, min: 0.1, max: 5, step: 0.1, label: 'X' },
+      parentScaleY: { value: 1, min: 0.1, max: 5, step: 0.1, label: 'Y' },
+      parentScaleZ: { value: 1, min: 0.1, max: 5, step: 0.1, label: 'Z' },
+    }),
   })
 
   // Child controls (Level 2)
@@ -45,6 +50,11 @@ function HierarchyScene() {
       childRotX: { value: 0, min: -Math.PI, max: Math.PI, step: 0.01, label: 'X' },
       childRotY: { value: 0, min: -Math.PI, max: Math.PI, step: 0.01, label: 'Y' },
       childRotZ: { value: 0, min: -Math.PI, max: Math.PI, step: 0.01, label: 'Z' },
+    }),
+    scale: folder({
+      childScaleX: { value: 1, min: 0.1, max: 5, step: 0.1, label: 'X' },
+      childScaleY: { value: 1, min: 0.1, max: 5, step: 0.1, label: 'Y' },
+      childScaleZ: { value: 1, min: 0.1, max: 5, step: 0.1, label: 'Z' },
     }),
   })
 
@@ -60,6 +70,11 @@ function HierarchyScene() {
       grandRotY: { value: 0, min: -Math.PI, max: Math.PI, step: 0.01, label: 'Y' },
       grandRotZ: { value: 0, min: -Math.PI, max: Math.PI, step: 0.01, label: 'Z' },
     }),
+    scale: folder({
+      grandScaleX: { value: 1, min: 0.1, max: 5, step: 0.1, label: 'X' },
+      grandScaleY: { value: 1, min: 0.1, max: 5, step: 0.1, label: 'Y' },
+      grandScaleZ: { value: 1, min: 0.1, max: 5, step: 0.1, label: 'Z' },
+    }),
   })
 
   // Geometries for edge overlays
@@ -72,6 +87,7 @@ function HierarchyScene() {
       ref={parentRef}
       position={[parent.parentPosX, parent.parentPosY, parent.parentPosZ]}
       rotation={[parent.parentRotX, parent.parentRotY, parent.parentRotZ]}
+      scale={[parent.parentScaleX, parent.parentScaleY, parent.parentScaleZ]}
     >
       {/* Parent mesh - Cube */}
       <mesh castShadow receiveShadow>
@@ -85,6 +101,7 @@ function HierarchyScene() {
         ref={childRef}
         position={[child.childPosX, child.childPosY, child.childPosZ]}
         rotation={[child.childRotX, child.childRotY, child.childRotZ]}
+        scale={[child.childScaleX, child.childScaleY, child.childScaleZ]}
       >
         {/* Child mesh - Sphere */}
         <mesh castShadow receiveShadow>
@@ -98,6 +115,7 @@ function HierarchyScene() {
           ref={grandchildRef}
           position={[grandchild.grandPosX, grandchild.grandPosY, grandchild.grandPosZ]}
           rotation={[grandchild.grandRotX, grandchild.grandRotY, grandchild.grandRotZ]}
+          scale={[grandchild.grandScaleX, grandchild.grandScaleY, grandchild.grandScaleZ]}
         >
           {/* Grandchild mesh - Torus */}
           <mesh castShadow receiveShadow>
